@@ -4,11 +4,6 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 
-export interface Customer {  
-  fisrtName: string;  
-  lastName: string; 
-}
-
 @Injectable({
   providedIn: 'root'
 })
