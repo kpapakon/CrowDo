@@ -3,15 +3,20 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
 import { Route, RouterModule } from '@angular/router';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { SignupComponent } from './signup/signup.component';
 
 const routes: Route[]  = [
   {
     path: 'login', component: LoginComponent
+  },
+  {
+    path : 'signup', component : SignupComponent
+
   }
 ]
 
 @NgModule({
-  declarations: [LoginComponent],
+  declarations: [LoginComponent, SignupComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
