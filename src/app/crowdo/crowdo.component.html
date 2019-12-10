@@ -1,0 +1,38 @@
+<form #form="ngForm" autocomplete="off" >
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text bg-white">
+                    <i class="fas fa-ad"></i>
+                </div>
+            </div>
+            <input name="ProjectCode" #ProjectCode="ngModel" [(ngModel)]="myService.ProjectCode" class="form-control" placeholder="Project Code" required>
+        </div>
+    </div>
+    <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text bg-white">
+                        <i class="fas fa-ad"></i>
+                    </div>
+                </div>
+                <input name="Title" #Title="ngModel" [(ngModel)]="myService.Title" class="form-control" placeholder="Title" required>
+            </div>
+        </div>
+        <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text bg-white">
+                            <i class="fas fa-ad"></i>
+                        </div>
+                    </div>
+                    <input name="Description" #Description="ngModel" [(ngModel)]="myService.Description" class="form-control" placeholder="Description" required>
+                </div>
+            </div>
+
+    <div class="form-group">
+        <button class="btn btn-success btn-lg btn-block" type="submit"><i class="fas fa-database"></i> Submit </button>
+    </div>
+
+ 
+</form>
