@@ -1,4 +1,4 @@
-import { MyService } from './my.service';
+import { ProjectService } from './project.service';
 import { CrowdoModule } from './crowdo/crowdo.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -31,7 +31,7 @@ import { HttpClientModule } from '@angular/common/http';
     ProjectModule,
     HttpClientModule
   ],
-  providers: [MyService],
+  providers: [ProjectService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

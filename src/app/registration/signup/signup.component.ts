@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import {FormGroup,FormControl} from '@angular/forms';
-import {MyService} from '../../my.service';
+import {ProjectService} from '../../project.service';
 import {Validators} from '@angular/forms';
 
 @Component({
   selector: 'crowdo-signup',
   templateUrl: './signup.component.html',
-  providers: [MyService]
+  providers: [ProjectService]
 })
 export class SignupComponent implements OnInit {
 
   myForm: FormGroup;
-  constructor(private myService: MyService) { }  
+  constructor(private projectService: ProjectService) { }  
   
   formSubmit(form: FormGroup) {  if (!form.valid) {  return; }  console.log(form.value); }
 

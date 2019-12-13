@@ -1,22 +1,21 @@
 
 import { Component, OnInit } from '@angular/core';
 import {FormGroup,FormControl} from '@angular/forms';
-import {MyService} from '../../my.service';
+import {ProjectService} from '../../project.service';
 import {Validators} from '@angular/forms';
-import { User } from 'src/app/user';
 import { Router } from '@angular/router';
 
 
 @Component({
   selector: 'crowdo-login',
   templateUrl: './login.component.html',
-  providers: [MyService]
+  styleUrls:['./login.component.scss'] 
 })
 export class LoginComponent implements OnInit {
 
   myForm: FormGroup;
-  constructor(private myService: MyService, private router: Router) { }  
-  formSubmit(form: FormGroup) {  if (!form.valid) {      return;   }  console.log(form.value); }
+  constructor(private projectService: ProjectService, private router: Router) { }  
+  formSubmit(form: FormGroup) {  if (!form.valid) {return;}  console.log(form.value); }
   
   UsernameFormControl = new FormControl("", [Validators.required, Validators.minLength(3)]);
   PasswordFormControl = new FormControl("", [Validators.required, Validators.minLength(3)]);
@@ -30,7 +29,7 @@ export class LoginComponent implements OnInit {
     });
     this.PasswordFormControl.valueChanges.subscribe( (value: string) => { // value is the current value 
     });
-    this.myService.Login(this.myForm.value).subscribe((i=>this.router.navigate([' '])))   
+    //this.myService.Login(this.myForm.value).subscribe((i=>this.router.navigate([' '])))   
   } 
 
 }

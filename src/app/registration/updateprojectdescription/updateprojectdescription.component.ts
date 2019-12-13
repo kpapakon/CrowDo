@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { MyService } from 'src/app/my.service';
+import { ProjectService } from 'src/app/project.service';
 
 @Component({
   selector: 'crowdo-updateprojectdescription',
   templateUrl: './updateprojectdescription.component.html',
-  providers: [MyService]
+  providers: [ProjectService]
 })
 export class UpdateprojectdescriptionComponent implements OnInit {
 
   myForm: FormGroup;
-  constructor(private myService: MyService) { }  
+  constructor(private projectService: ProjectService) { }  
   formSubmit(form: FormGroup) {  if (!form.valid) {      return;   }  console.log(form.value); }
   
   DescriptionFormControl = new FormControl("", [Validators.required]);

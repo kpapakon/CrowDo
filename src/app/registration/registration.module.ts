@@ -6,6 +6,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { SignupComponent } from './signup/signup.component';
 import { UpdateprojectdescriptionComponent } from './updateprojectdescription/updateprojectdescription.component';
 import { UpdateprojecttitleComponent } from './updateprojecttitle/updateprojecttitle.component';
+import { SeeAllProjectsComponent } from '../project/see-all-projects/see-all-projects.component';
 
 const routes: Route[]  = [
   {
@@ -21,6 +22,10 @@ const routes: Route[]  = [
   },
   {
     path : 'projecttitle', component : UpdateprojecttitleComponent
+
+  },
+  {
+    path : 'seeallprojects', component : SeeAllProjectsComponent
 
   }
 ]
