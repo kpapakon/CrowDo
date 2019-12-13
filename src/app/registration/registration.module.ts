@@ -4,6 +4,8 @@ import { LoginComponent } from './login/login.component';
 import { Route, RouterModule } from '@angular/router';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { SignupComponent } from './signup/signup.component';
+import { UpdateprojectdescriptionComponent } from './updateprojectdescription/updateprojectdescription.component';
+import { UpdateprojecttitleComponent } from './updateprojecttitle/updateprojecttitle.component';
 
 const routes: Route[]  = [
   {
@@ -12,11 +14,19 @@ const routes: Route[]  = [
   {
     path : 'signup', component : SignupComponent
 
+  },
+  {
+    path : 'projectdescription', component : UpdateprojectdescriptionComponent
+
+  },
+  {
+    path : 'projecttitle', component : UpdateprojecttitleComponent
+
   }
 ]
 
 @NgModule({
-  declarations: [LoginComponent, SignupComponent],
+  declarations: [LoginComponent, SignupComponent, UpdateprojectdescriptionComponent, UpdateprojecttitleComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),

@@ -14,7 +14,7 @@ export class CrowdoComponent implements OnInit {
 
   myForm: FormGroup;
   constructor(private myService: MyService) { }  
-  //customer: Array<string>;
+  
   formSubmit(form: FormGroup) {  if (!form.valid) {      return;   }  console.log(form.value); }
   
   projectCodeFormControl = new FormControl("", [Validators.required, Validators.minLength(3)]);
