@@ -12,6 +12,7 @@ import { RegistrationModule } from './registration/registration.module';
 import { RouterModule } from '@angular/router';
 import { AddProjectComponent } from './project/add-project/add-project.component';
 import { ProjectModule } from './project/project.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [ 
@@ -27,7 +28,8 @@ import { ProjectModule } from './project/project.module';
     FormsModule,
     RegistrationModule,
     RouterModule.forRoot([]),
-    ProjectModule
+    ProjectModule,
+    HttpClientModule
   ],
   providers: [MyService],
   bootstrap: [AppComponent]

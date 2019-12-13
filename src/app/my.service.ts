@@ -11,10 +11,10 @@ import { Observable } from 'rxjs';
 })
 export class MyService {
 
-  formData: ProjectItem;
-  formData2: User;
-  
-  constructor() { }
+  private readonly endpoint = 'http://localhost:54396/Crowdo/login';
+  constructor(private http: HttpClient) { }
+  Login(user: User): Observable<any> {    
+    return this.http.post<any>(this.endpoint, user);  } 
   
 }
 
