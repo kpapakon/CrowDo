@@ -1,15 +1,40 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AddprojectComponent } from './addproject/addproject.component';
+import { AddProjectComponent } from './add-project/add-project.component';
+import { RouterModule, Route } from '@angular/router';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { SeeAllProjectsComponent } from './see-all-projects/see-all-projects.component';
-import { FundProjectComponent } from './fund-project/fund-project.component';
+import { FundProjectComponent } from './fund-project/add-fund.component';
+import { UpdateprojectdescriptionComponent } from './edit-project/updateprojectdescription/updateprojectdescription.component';
 
 
+const routes: Route[]  = [
+  {
+    path: 'addproject', component: AddProjectComponent
+  },
+  {
+    path: 'seeallprojects', component: SeeAllProjectsComponent
+  },
+  {
+    path : 'addfund', component : FundProjectComponent
+
+  },
+  {
+    path : 'update_project', component : UpdateprojectdescriptionComponent
+
+  }
+]
 
 @NgModule({
-  declarations: [AddprojectComponent, SeeAllProjectsComponent, FundProjectComponent],
+  declarations: [AddProjectComponent, SeeAllProjectsComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule.forChild(routes),
+    ReactiveFormsModule,
+    FormsModule,
+  ],
+  exports: [
+    RouterModule
   ]
 })
-export class ProjectsModule { }
+export class ProjectModule { }
