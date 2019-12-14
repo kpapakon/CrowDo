@@ -13,13 +13,15 @@ import { RouterModule } from '@angular/router';
 import { AddProjectComponent } from './project/add-project/add-project.component';
 import { ProjectModule } from './project/project.module';
 import { HttpClientModule } from '@angular/common/http';
+import { NavbarComponent } from './layout/navbar/navbar.component';
 
 @NgModule({
   declarations: [ 
     AppComponent,
     CrowdoComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    NavbarComponent
   ],
   imports: [ 
     BrowserModule,
