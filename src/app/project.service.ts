@@ -35,8 +35,8 @@ export class ProjectService {
   AddProject(project:Projects): Observable<Projects> {    
     return this.http.post<Projects>(this.endpoint3,project);}
   
-  GetProjectByTitle(project:Projects,title:string): Observable<Projects>{
-    return this.http.get<Projects>(this.endpoint4);
+  GetProjectByTitle(title:any): Observable<any>{
+    return this.http.get<Projects[]>(this.endpoint4,title);
   }
   
   

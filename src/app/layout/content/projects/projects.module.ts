@@ -7,6 +7,9 @@ import { SeeAllProjectsComponent } from './see-all-projects/see-all-projects.com
 import { FundProjectComponent } from './fund-project/add-fund.component';
 import { UpdateprojectdescriptionComponent } from './edit-project/updateprojectdescription/updateprojectdescription.component';
 import { ProjectByTitleComponent } from './project-by-title/project-by-title.component';
+import { ProjectByYearComponent } from './project-by-year/project-by-year.component';
+import { ProjectByCodeComponent } from './project-by-code/project-by-code.component';
+import { ProjectByCreatorComponent } from './project-by-creator/project-by-creator.component';
 
 
 const routes: Route[]  = [
@@ -23,11 +26,15 @@ const routes: Route[]  = [
   {
     path : 'update_project', component : UpdateprojectdescriptionComponent
 
+  },
+  {
+    path : 'projecttitle', component : ProjectByTitleComponent
+
   }
 ]
 
 @NgModule({
-  declarations: [AddProjectComponent, SeeAllProjectsComponent, ProjectByTitleComponent],
+  declarations: [AddProjectComponent, SeeAllProjectsComponent, ProjectByTitleComponent, ProjectByYearComponent, ProjectByCodeComponent, ProjectByCreatorComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
