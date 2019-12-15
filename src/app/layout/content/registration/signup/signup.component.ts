@@ -48,7 +48,7 @@ export class SignupComponent implements OnInit {
     if(this.myForm.invalid){
       return;
     }
-    this.userService.SignUp(this.myForm.value).subscribe((i=>this.router.navigate(['seeallprojects'])));
+    this.userService.SignUp(this.myForm.value).subscribe((i=>this.router.navigate([''])));
   }
     
 

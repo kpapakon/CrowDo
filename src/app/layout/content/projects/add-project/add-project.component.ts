@@ -55,8 +55,7 @@ export class AddProjectComponent implements OnInit {
     if(this.myForm.invalid){
       return;
     }
-    this.projectService.AddProject(this.myForm.value).subscribe((i=>this.router.navigate(['seeallprojects'])));
+    this.projectService.AddProject(this.myForm.value).subscribe((i=>this.router.navigate([''])));
   }
-    
-
+  
 }

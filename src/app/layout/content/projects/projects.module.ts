@@ -6,6 +6,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { SeeAllProjectsComponent } from './see-all-projects/see-all-projects.component';
 import { FundProjectComponent } from './fund-project/add-fund.component';
 import { UpdateprojectdescriptionComponent } from './edit-project/updateprojectdescription/updateprojectdescription.component';
+import { ProjectByTitleComponent } from './project-by-title/project-by-title.component';
 
 
 const routes: Route[]  = [
@@ -26,7 +27,7 @@ const routes: Route[]  = [
 ]
 
 @NgModule({
-  declarations: [AddProjectComponent, SeeAllProjectsComponent],
+  declarations: [AddProjectComponent, SeeAllProjectsComponent, ProjectByTitleComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),

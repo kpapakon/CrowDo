@@ -35,7 +35,7 @@ export class FundProjectComponent implements OnInit {
     this.PackageCodeFormControl.valueChanges.subscribe( (value: string) => { // value is the current value 
     });
   
-    this.fundingService.AddFund(this.myForm.value).subscribe((i=>this.router.navigate(['seeallprojects'])));
+    this.fundingService.AddFund(this.myForm.value).subscribe((i=>this.router.navigate([''])));
   }
 
 }

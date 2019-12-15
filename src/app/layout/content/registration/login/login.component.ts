@@ -4,7 +4,6 @@ import {FormGroup,FormControl} from '@angular/forms';
 import {Validators} from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/user.service';
-import { ProjectService } from 'src/app/project.service';
 
 
 @Component({
@@ -16,7 +15,7 @@ export class LoginComponent implements OnInit {
 
   myForm: FormGroup;
   submitted=false;
-  constructor(private projectService: ProjectService,private userService: UserService, private router: Router) { }  
+  constructor(private userService: UserService, private router: Router) { }  
   formSubmit(form: FormGroup) {  if (!form.valid) {return;}  console.log(form.value); }
   
   UsernameFormControl = new FormControl("", [Validators.required, Validators.minLength(3)]);
@@ -38,7 +37,8 @@ export class LoginComponent implements OnInit {
     if(this.myForm.invalid){
       return;
     }
-    this.userService.login(this.myForm.value).subscribe((i=>this.router.navigate(['seeallprojects'])));
+    this.userService.login(this.myForm.value).subscribe((i=>this.router.navigate([''])));
+    
   }
     
  

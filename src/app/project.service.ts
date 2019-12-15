@@ -22,6 +22,7 @@ export class ProjectService {
   private readonly endpoint = 'http://localhost:54396/Crowdo/all_projects';
   private readonly endpoint2 = 'http://localhost:54396/Crowdo/update_project';
   private readonly endpoint3 = 'http://localhost:54396/Crowdo/add_project';
+  private readonly endpoint4 = 'http://localhost:54396/Crowdo/projecttitle/{title}';
   
   constructor(private http: HttpClient) { }
   
@@ -33,6 +34,11 @@ export class ProjectService {
 
   AddProject(project:Projects): Observable<Projects> {    
     return this.http.post<Projects>(this.endpoint3,project);}
+  
+  GetProjectByTitle(project:Projects,title:string): Observable<Projects>{
+    return this.http.get<Projects>(this.endpoint4);
+  }
+  
   
 }
 
