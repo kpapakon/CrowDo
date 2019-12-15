@@ -9,9 +9,9 @@ export class CreatorsComponent implements OnInit {
 
   Arr = Array; //Array type captured in a variable
   num:number = 20;
-  projects: Array<User>;
+  users: Array<User>;
   constructor(private userService: UserService) { }
   ngOnInit() {
-    this.userService.GetAllCreators().subscribe((data)=>{this.projects=data});
+    this.userService.GetAllCreators().subscribe((data)=>{this.users=data});
   }
 }

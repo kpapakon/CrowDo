@@ -1,4 +1,5 @@
-<form #form="ngForm" autocomplete="off" >
+
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()" autocomplete="off" >
     <div class="form-group">
         <div class="input-group">
             <div class="input-group-prepend">
@@ -6,7 +7,27 @@
                     <i class="fas fa-ad"></i>
                 </div>
             </div>
-            <input name="ProjectCode" #ProjectCode="ngModel" [(ngModel)]="myService.ProjectCode" class="form-control" placeholder="Project Code" required>
+            <input formControlName="projectCode" type="text" class="form-control" placeholder="Project Code" required>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text bg-white">
+                    <i class="fas fa-ad"></i>
+                </div>
+            </div>
+            <input formControlName="userCode" type="text" class="form-control" placeholder="User Code" required>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text bg-white">
+                    <i class="fas fa-ad"></i>
+                </div>
+            </div>
+            <input formControlName="title" type="text" class="form-control" placeholder="Title" required>
         </div>
     </div>
     <div class="form-group">
@@ -16,19 +37,39 @@
                         <i class="fas fa-ad"></i>
                     </div>
                 </div>
-                <input name="Title" #Title="ngModel" [(ngModel)]="myService.Title" class="form-control" placeholder="Title" required>
+                <input formControlName="description" type="text" class="form-control" placeholder="Description" required>
             </div>
         </div>
         <div class="form-group">
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <div class="input-group-text bg-white">
-                            <i class="fas fa-ad"></i>
-                        </div>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text bg-white">
+                        <i class="fas fa-ad"></i>
                     </div>
-                    <input name="Description" #Description="ngModel" [(ngModel)]="myService.Description" class="form-control" placeholder="Description" required>
                 </div>
+                <input formControlName="startDate" type="date" class="form-control" placeholder="Start Date" required>
             </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text bg-white">
+                        <i class="fas fa-ad"></i>
+                    </div>
+                </div>
+                <input formControlName="packageCode" type="text" class="form-control" placeholder="Package Code" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text bg-white">
+                        <i class="fas fa-ad"></i>
+                    </div>
+                </div>
+                <input formControlName="numberOfRequestedPackages" type="text" class="form-control" placeholder="Number Of Requested Packages" required>
+            </div>
+        </div>
     <div class="form-group">
         <button class="btn btn-success btn-lg btn-block" type="submit"><i class="fas fa-database"></i> Submit </button>
     </div>

@@ -22,6 +22,7 @@ export class SignupComponent implements OnInit {
   AddressFormControl=new FormControl("", [Validators.required, Validators.minLength(3)]);
   UsernameFormControl = new FormControl("", [Validators.required, Validators.minLength(5)]);
   PasswordFormControl = new FormControl("", [Validators.required, Validators.minLength(5)]);
+  UserCodeFormControl = new FormControl("", [Validators.required]);
 
   ngOnInit() {    
     this.myForm = new FormGroup({  
@@ -29,6 +30,7 @@ export class SignupComponent implements OnInit {
       Address: this.AddressFormControl,
       Username: this.UsernameFormControl,  
       Password: this.PasswordFormControl,
+      UserCode: this.UserCodeFormControl
     });  
     this.NameFormControl.valueChanges.subscribe( (value: string) => { // value is the current value 
     });
@@ -38,13 +40,15 @@ export class SignupComponent implements OnInit {
     });
     this.PasswordFormControl.valueChanges.subscribe( (value: string) => { // value is the current value 
     }); 
+    this.UserCodeFormControl.valueChanges.subscribe( (value: string) => { // value is the current value 
+    }); 
   } 
   onSubmit(){
     this.submitted=true;
     if(this.myForm.invalid){
       return;
     }
-    this.userService.login(this.myForm.value).subscribe((i=>this.router.navigate(['seeallprojects'])));
+    this.userService.SignUp(this.myForm.value).subscribe((i=>this.router.navigate(['seeallprojects'])));
   }
     
 
