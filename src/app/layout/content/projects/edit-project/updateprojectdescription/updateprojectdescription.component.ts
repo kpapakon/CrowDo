@@ -11,7 +11,7 @@ export class UpdateprojectdescriptionComponent implements OnInit {
 
   myForm: FormGroup;
   constructor(private projectService: ProjectService, private router: Router) { }  
-  formSubmit(form: FormGroup) {  if (!form.valid) {      return;   }  console.log(form.value); }
+  //formSubmit(form: FormGroup) {  if (!form.valid) {      return;   }  console.log(form.value); }
   
   submitted = false;
   DescriptionFormControl = new FormControl("", [Validators.required]);
@@ -47,7 +47,7 @@ export class UpdateprojectdescriptionComponent implements OnInit {
     });
     
   } 
-  onSubmit(){
+  formSubmit(){
     this.submitted=true;
     if(this.myForm.invalid){
       return;
