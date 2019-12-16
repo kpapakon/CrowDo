@@ -41,6 +41,10 @@ const routes: Route[]  = [
   {
     path : 'projectcode', component : ProjectByCodeComponent
 
+  },
+  {
+    path : 'projectusercode', component : ProjectByCreatorComponent
+
   }
 ]
 

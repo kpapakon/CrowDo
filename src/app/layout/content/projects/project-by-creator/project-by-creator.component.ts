@@ -13,7 +13,7 @@ export class ProjectByCreatorComponent implements OnInit {
   submitted = false;
   constructor(private projectService: ProjectService, private router: Router) { }
   
-  project: Projects;
+  projects: Array<Projects>;
   
 
   ngOnInit() {
@@ -34,9 +34,9 @@ export class ProjectByCreatorComponent implements OnInit {
       return;
     }
 
-    this.projectService.GetProjectByCode(this.myForm.value.projectCode)
+    this.projectService.GetProjectByCreator(this.myForm.value.userCode)
       .subscribe((data) => {
-        this.project = data
+        this.projects = data
       });
 
   }

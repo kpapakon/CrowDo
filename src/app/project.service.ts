@@ -47,6 +47,9 @@ export class ProjectService {
     return this.http.get<Projects>(this.endpoint + 'projectcode/' + code);
   }
 
+  GetProjectByCreator(usercode: string): Observable<any> {
+    return this.http.get<Projects[]>(this.endpoint + 'creations/' + usercode);
+  }
  
 }
 
