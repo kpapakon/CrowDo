@@ -1,61 +1,65 @@
 import { ProjectService } from 'src/app/project.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'crowdo-add-project',
   templateUrl: './add-project.component.html',
-  providers: [ProjectService]
 })
 export class AddProjectComponent implements OnInit {
 
   myForm: FormGroup;
   submitted=false;
-  constructor(private projectService: ProjectService,private router: Router) { }  
+  projectCode: string;
+  constructor(private projectService: ProjectService, private router: Router, private activatedRoute: ActivatedRoute) { } 
   
-  formSubmit(form: FormGroup) {  if (!form.valid) {  return; }  console.log(form.value); }
-  
-  ProjectCodeFormControl=new FormControl("", [Validators.required]);
-  UserCodeFormControl=new FormControl("", [Validators.required]);
-  TitleFormControl = new FormControl("", [Validators.required, Validators.minLength(5)]);
-  DescriptionFormControl = new FormControl("", [Validators.required, Validators.minLength(5)]);
-  StartDateFormControl = new FormControl("", [Validators.required]);
-  PackageCodeFormControl = new FormControl("", [Validators.required]);
-  NumberOfRequestedPackagesFormControl = new FormControl("", [Validators.required]);
 
+  ngOnInit() {
+    const userCode = localStorage.getItem('userCode');
+    this.projectCode = this.activatedRoute.snapshot.params['code']
 
-  ngOnInit() {    
+    if (!userCode) {
+      this.router.navigate(['login']);
+      return;
+    }    
     this.myForm = new FormGroup({  
-      projectCode: this.ProjectCodeFormControl,
-      userCode: this.UserCodeFormControl,
-      title: this.TitleFormControl,  
-      description: this.DescriptionFormControl,
-      startDate: this.StartDateFormControl,
-      packageCode: this.PackageCodeFormControl,
-      numberOfRequestedPackages: this.NumberOfRequestedPackagesFormControl
+      projectCode: new FormControl("", [Validators.required]),
+      userCode: new FormControl("", [Validators.required]),
+      title: new FormControl("", [Validators.required]),  
+      description: new FormControl("", [Validators.required]),
+      startDate: new FormControl("", [Validators.required]),
+      packageCode: new FormControl("", [Validators.required]),
+      numberOfRequestedPackages: new FormControl("", [Validators.required])
     });  
-    this.ProjectCodeFormControl.valueChanges.subscribe( (value: string) => { // value is the current value 
-    });
-    this.UserCodeFormControl.valueChanges.subscribe( (value: string) => { // value is the current value 
-    }); 
-    this.TitleFormControl.valueChanges.subscribe( (value: string) => { // value is the current value 
-    });
-    this.DescriptionFormControl.valueChanges.subscribe( (value: string) => { // value is the current value 
-    });
-    this.StartDateFormControl.valueChanges.subscribe( (value: string) => { // value is the current value 
-    });
-    this.PackageCodeFormControl.valueChanges.subscribe( (value: string) => { // value is the current value 
-    });
-    this.NumberOfRequestedPackagesFormControl.valueChanges.subscribe( (value: string) => { // value is the current value 
-    }); 
+
+    this.fillForm();
+    
   } 
-  onSubmit(){
+
+  formSubmit(){
     this.submitted=true;
-    if(this.myForm.invalid){
+    if(!this.myForm.valid){
       return;
     }
-    this.projectService.AddProject(this.myForm.value).subscribe((i=>this.router.navigate([''])));
+
+    const actionToInvoke = this.projectCode
+    ? this.projectService.updateproject(this.myForm.value)
+    : this.projectService.AddProject(this.myForm.value);
+
+    actionToInvoke.subscribe()
   }
+
+
+  private fillForm() {
+    
+    if (!this.projectCode) {
+      return;
+    }
+    this.projectService.GetProjectByCode(this.projectCode).subscribe(data => {
+      this.myForm.patchValue(data)
+    })
+  }
+  
   
 }

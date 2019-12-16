@@ -17,6 +17,9 @@ const routes: Route[]  = [
     path: 'addproject', component: AddProjectComponent
   },
   {
+    path: 'editproject/:code', component: AddProjectComponent
+  },
+  {
     path: 'seeallprojects', component: SeeAllProjectsComponent
   },
   {
@@ -29,6 +32,14 @@ const routes: Route[]  = [
   },
   {
     path : 'projecttitle', component : ProjectByTitleComponent
+
+  },
+  {
+    path : 'projectyear', component : ProjectByYearComponent
+
+  },
+  {
+    path : 'projectcode', component : ProjectByCodeComponent
 
   }
 ]

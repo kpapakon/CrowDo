@@ -3,7 +3,8 @@ import { ProjectService, Projects } from 'src/app/project.service';
 
 @Component({
   selector: 'crowdo-see-all-projects',
-  templateUrl: './see-all-projects.component.html' 
+  templateUrl: './see-all-projects.component.html',
+  styleUrls: ['./see-all-projects.component.scss'] 
 })
 export class SeeAllProjectsComponent implements OnInit {
 

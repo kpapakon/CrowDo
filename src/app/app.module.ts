@@ -1,3 +1,4 @@
+import { ContentComponent } from './layout/content/content.component';
 import { UserService } from './user.service';
 import { FundProjectComponent } from './layout/content/projects/fund-project/add-fund.component';
 import { ProjectService } from './project.service';
@@ -25,7 +26,8 @@ import { FundingService } from './funding.service';
     HeaderComponent,
     FooterComponent,
     NavbarComponent,
-    FundProjectComponent
+    FundProjectComponent,
+    ContentComponent
   ],
   imports: [ 
     BrowserModule,

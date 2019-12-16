@@ -1,1 +1,26 @@
-<p>project-by-year works!</p>
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()" autocomplete="off">
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text bg-white">
+                    <i class="fas fa-ad"></i>
+                </div>
+            </div>
+            <input formControlName="year" type="text" class="form-control" placeholder="Year" required>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <button class="btn btn-success btn-lg btn-block" type="submit"><i class="fas fa-database"></i> Search </button>
+
+
+    </div>
+</form>
+<div>
+    <ul>
+        <li *ngFor="let project of projects">
+             Title:   {{project.title}}
+             
+         </li>
+     </ul>
+</div>

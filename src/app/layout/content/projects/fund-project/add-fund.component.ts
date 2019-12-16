@@ -10,32 +10,32 @@ import { Router } from '@angular/router';
 export class FundProjectComponent implements OnInit {
 
   myForm: FormGroup;
-  
-  formSubmit(form: FormGroup) {  if (!form.valid) {  return; }  console.log(form.value); }
 
-  UserCodeFormControl=new FormControl("", [Validators.required, Validators.minLength(5)]);
-  ProjectCodeFormControl=new FormControl("", [Validators.required, Validators.minLength(3)]);
-  PackageCodeFormControl = new FormControl("", [Validators.required, Validators.minLength(5)]);
-  
-  Arr = Array; //Array type captured in a variable
-  num:number = 20;
-  fundings: Array<Fundings>;
+  formSubmit() {  
+    if (!this.myForm.valid) {  
+      return; 
+    }  
+
+    this.fundingService.AddFund(this.myForm.value).subscribe();
+    console.log(this.myForm.value); 
+  }
   constructor(private fundingService: FundingService,private router: Router) { }
+
+
   ngOnInit() {
+
+    const userCode = localStorage.getItem('userCode');
+
+    if (!userCode) {
+      this.router.navigate(['login']);
+      return;
+    }
+
     this.myForm = new FormGroup({  
-      Name: this.UserCodeFormControl,
-      Address: this.ProjectCodeFormControl,
-      Username: this.PackageCodeFormControl,  
-      
+      packageCode: new FormControl("", [Validators.required]),
+      projectCode: new FormControl("", [Validators.required]),  
     });  
-    this.UserCodeFormControl.valueChanges.subscribe( (value: string) => { // value is the current value 
-    });
-    this.ProjectCodeFormControl.valueChanges.subscribe( (value: string) => { // value is the current value 
-    }); 
-    this.PackageCodeFormControl.valueChanges.subscribe( (value: string) => { // value is the current value 
-    });
-  
-    this.fundingService.AddFund(this.myForm.value).subscribe((i=>this.router.navigate([''])));
+
   }
 
 }

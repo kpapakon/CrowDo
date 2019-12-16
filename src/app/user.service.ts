@@ -7,27 +7,24 @@ export interface User{
         name:string;
         username:string;
         password:string;
-        usercode:string;
+        userCode:string;
 }
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  private readonly endpoint = 'http://localhost:54396/Crowdo/login';
-  private readonly endpoint2 = 'http://localhost:54396/Crowdo/creators';
-  private readonly endpoint3 = 'http://localhost:54396/Crowdo/add_user';
-  private readonly endpoint4 = 'http://localhost:54396/Crowdo/logout';
-  
+  private readonly endpoint = 'http://localhost:54396/Crowdo/';
+
 
   constructor(private http: HttpClient) { }
   login(user:User): Observable<User> {    
-    return this.http.post<User>(this.endpoint,user);} 
-  GetAllCreators(): Observable<User[]> {    
-    return this.http.get<User[]>(this.endpoint2);  } 
+    return this.http.post<User>(this.endpoint + 'login',user);} 
+
   SignUp(user:User): Observable<User> {    
-    return this.http.post<User>(this.endpoint3,user);}
-  logout(user:User): Observable<User> {    
-      return this.http.post<User>(this.endpoint4,user);}
+    return this.http.post<User>(this.endpoint + 'add_user',user);}
+
+  GetAllCreators(): Observable<User[]>{    
+    return this.http.get<User[]>(this.endpoint + 'creators');}
   
 }

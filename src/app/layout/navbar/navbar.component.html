@@ -1,46 +1,64 @@
+<style>
+  .jumbotron {
+   background-color:#e7ff14;
+ }
+ .navbar-brand{
+   font-family: aktiv-grotesk,sans-serif;
+   text-rendering: optimizeLegibility;
+   color:#20201b;
+   font-weight: 600;
+   padding-bottom: 6%;
+ }
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">CrowDo</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#" [routerLink]="['/login']">Login</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#" [routerLink]="['/logout']">Logout</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#" [routerLink]="['/signup']">Sign Up</a>
-          </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Options
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#" [routerLink]="['/seeallprojects']">See All Projects</a>
-            <a class="dropdown-item" href="#" [routerLink]="['/addproject']">Add Project</a>
-            <a class="dropdown-item" href="#" [routerLink]="['/update_project']">Update Project</a>
-            <a class="dropdown-item" href="#" [routerLink]="['/addfund']">Add Fund</a>
-            <a class="dropdown-item" href="#" [routerLink]="['/viewallcreators']">View All Creators</a>
-            <a class="dropdown-item" href="#" [routerLink]="['/projecttitle']">Search a project by title</a>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-        </li>
-      </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
-    </div>
-  </nav>
-
+ </style>
+ <nav class="navbar navbar-expand-lg navbar-light bg-light" style="font-size: large;background-color:#e7ff14; width: 100%; padding-top:0%; padding-left: 0%; padding: right 0;">
+   <div class="collapse navbar-collapse" id="navbarSupportedContent" style="background-color:#e7ff14;width: 100%;">
+     <div class="jumbotron jumbotron-fluid">
+       <div class="container">
+         <h1 class="display-4"  href="#">     
+             <a class="navbar-brand" href="#"style="font-size:150%;height:120px; allign-self:center;">CrowDo|</a>
+             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+             </button>      
+         </h1>
+       </div>
+     </div>
+     <ul class="navbar-nav mr-auto">
+       <li class="nav-item active">
+         <a class="nav-link" href="#"style="padding-left:100px">Home <span class="sr-only">(current)</span></a>
+       </li>
+       <li class="nav-item">
+         <a class="nav-link" href="#" [routerLink]="['/login']"style="padding-left:70px;">Login</a>
+       </li>
+       <li class="nav-item">
+         <a class="nav-link" href="#" [routerLink]="['/signup']"style="padding-left:70px;">Sign Up</a>
+       </li>
+       <li class="nav-item dropdown" >
+         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+           aria-haspopup="true" aria-expanded="false" style="padding-left:70px;">
+           Options
+         </a>
+         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#" [routerLink]="['/seeallprojects']">See All Projects</a>
+          <a class="dropdown-item" href="#" [routerLink]="['/addproject']">Add Project</a>
+          <a class="dropdown-item" href="#" [routerLink]="['/update_project']">Update Project</a>
+          <a class="dropdown-item" href="#" [routerLink]="['/addfund']">Add Fund</a>
+          <a class="dropdown-item" href="#" [routerLink]="['/viewallcreators']">View All Creators</a>
+          <a class="dropdown-item" href="#" [routerLink]="['/projecttitle']">Search a project by title</a>
+          <a class="dropdown-item" href="#" [routerLink]="['/projectyear']">Search a project by year</a>
+          <a class="dropdown-item" href="#" [routerLink]="['/projectcode']">Search a project by code</a>
+        </div>
+       </li>
+     </ul>
+     <form class="form-inline my-2 my-lg-0">
+       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" style="font-size: large;color:black;">
+       <button class="btn btn-outline-success my-2 my-sm-0" type="submit"style="font-size: large;color:black;">Search</button>
+     </form>
+   </div>
+ </nav>
+ <style>
+ .navbar {
+ font-size: large;
+ }
+ </style>
   

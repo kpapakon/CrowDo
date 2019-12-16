@@ -2,10 +2,10 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-export interface Fundings{
-  userCode:string ;
-  projectCode:string;
-  packageCode:string ;
+export interface Fundings {
+  userCode: string;
+  projectCode: string;
+  packageCode: string;
 }
 
 @Injectable({
@@ -15,7 +15,9 @@ export class FundingService {
 
   private readonly endpoint = 'http://localhost:54396/Crowdo/add_project_funding';
   constructor(private http: HttpClient) { }
-  
-  AddFund(funding:Fundings): Observable<Fundings> {    
-    return this.http.post<Fundings>(this.endpoint,funding);} 
+
+  AddFund(funding: Fundings): Observable<Fundings> {
+    funding.userCode = localStorage.getItem('userCode');
+    return this.http.post<Fundings>(this.endpoint, funding);
+  }
 }

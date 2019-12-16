@@ -6,7 +6,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { SignupComponent } from './signup/signup.component';
 import { UpdateprojectdescriptionComponent } from '../projects/edit-project/updateprojectdescription/updateprojectdescription.component';
 import { CreatorsComponent } from './creators/creators.component';
-import { LogoutComponent } from './logout/logout.component';
+
 
 
 
@@ -27,12 +27,12 @@ const routes: Route[]  = [
 
   },
   {
-    path: 'logout', component: LogoutComponent
+    path: 'creators', component: CreatorsComponent
   }
 ]
 
 @NgModule({
-  declarations: [LoginComponent, SignupComponent, UpdateprojectdescriptionComponent, CreatorsComponent, LogoutComponent],
+  declarations: [LoginComponent, SignupComponent, UpdateprojectdescriptionComponent, CreatorsComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
