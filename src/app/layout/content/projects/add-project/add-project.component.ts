@@ -30,7 +30,9 @@ export class AddProjectComponent implements OnInit {
       description: new FormControl("", [Validators.required]),
       startDate: new FormControl("", [Validators.required]),
       packageCode: new FormControl("", [Validators.required]),
-      numberOfRequestedPackages: new FormControl("", [Validators.required])
+      numberOfRequestedPackages: new FormControl("", [Validators.required]),
+      totalAskingFunds: new FormControl("", [Validators.required]),
+      totalReceivingFunds: new FormControl("", [Validators.required])
     });  
 
     this.fillForm();
