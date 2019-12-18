@@ -10,6 +10,7 @@ import { ProjectByTitleComponent } from './project-by-title/project-by-title.com
 import { ProjectByYearComponent } from './project-by-year/project-by-year.component';
 import { ProjectByCodeComponent } from './project-by-code/project-by-code.component';
 import { ProjectByCreatorComponent } from './project-by-creator/project-by-creator.component';
+import { GetMyFundingsComponent } from './get-my-fundings/get-my-fundings.component';
 
 
 const routes: Route[]  = [
@@ -45,11 +46,14 @@ const routes: Route[]  = [
   {
     path : 'projectusercode', component : ProjectByCreatorComponent
 
+  },
+  {
+    path: 'myfundings', component: GetMyFundingsComponent
   }
 ]
 
 @NgModule({
-  declarations: [AddProjectComponent, SeeAllProjectsComponent, ProjectByTitleComponent, ProjectByYearComponent, ProjectByCodeComponent, ProjectByCreatorComponent],
+  declarations: [AddProjectComponent, SeeAllProjectsComponent, ProjectByTitleComponent, ProjectByYearComponent, ProjectByCodeComponent, ProjectByCreatorComponent, GetMyFundingsComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),

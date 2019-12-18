@@ -44,7 +44,7 @@ export class AddProjectComponent implements OnInit {
     if(!this.myForm.valid){
       return;
     }
-
+    // na pairnei to code tou project pou theloume na kanoume update kai ti forma apo to add project
     const actionToInvoke = this.projectCode
     ? this.projectService.updateproject(this.myForm.value)
     : this.projectService.AddProject(this.myForm.value);
@@ -59,7 +59,7 @@ export class AddProjectComponent implements OnInit {
       return;
     }
     this.projectService.GetProjectByCode(this.projectCode).subscribe(data => {
-      this.myForm.patchValue(data)
+      this.myForm.patchValue(data) // matcharei tis plirofories tou project stin forma wste na uparhoun oles
     })
   }
   

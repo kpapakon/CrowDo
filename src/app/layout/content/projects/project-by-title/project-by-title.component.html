@@ -6,7 +6,7 @@
                     <i class="fas fa-ad"></i>
                 </div>
             </div>
-            <input formControlName="title" type="text" class="form-control" placeholder="Title" required>
+            <input formControlName="title" type="text" class="form-control" placeholder="Title" required style="font-size:15px;">
         </div>
     </div>
 
@@ -17,6 +17,10 @@
     </div>
 </form>
 
-<div *ngIf="project">
-    Title: {{project.title}}
+<div *ngIf="project" style="font-size:15px;">
+    Title : {{project.title}}
+    <br>
+    ProjectCode : {{project.projectCode}}
+    <br>
+    Description : {{project.description}}
 </div>

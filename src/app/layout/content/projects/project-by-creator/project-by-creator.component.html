@@ -6,7 +6,7 @@
                     <i class="fas fa-ad"></i>
                 </div>
             </div>
-            <input formControlName="userCode" type="text" class="form-control" placeholder="User Code" required>
+            <input formControlName="userCode" type="text" class="form-control" placeholder="User Code" required  style="font-size:15px;">
         </div>
     </div>
 
@@ -19,8 +19,12 @@
 
 <div>
     <ul>
-        <li *ngFor="let project of projects">
-             Title:   {{project.title}}
+        <li *ngFor="let project of projects"  style="font-size:15px;">
+            Title : {{project.title}}
+            <br>
+            ProjectCode : {{project.projectCode}}
+            <br>
+            Description : {{project.description}}
              
          </li>
      </ul>
